@@ -1,11 +1,27 @@
 <template>
   <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link>
-    </nav>
-    <router-view />
+    <top-navbar> </top-navbar>
+    <transition name="fade" mode="out-in">
+      <router-view></router-view>
+    </transition>
   </div>
 </template>
+<script>
+import("sweetalert2/dist/sweetalert2.css");
+import TopNavbar from "@/layouts/TopNavbar";
+export default {
+  name: "app",
+  components: {
+    topNavbar: TopNavbar,
+  },
+  data() {
+    return {
+      title: "Lefo.net",
+      fullPage: true,
+    };
+  },
+};
+</script>
 
 <style lang="scss">
 #app {
@@ -14,18 +30,5 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-}
-
-nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
 }
 </style>
