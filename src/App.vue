@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <top-navbar> </top-navbar>
+    <top-navbar v-if="!['calculate'].includes($route.name)"> </top-navbar>
     <transition name="fade" mode="out-in">
       <router-view></router-view>
     </transition>
@@ -28,7 +28,10 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
+  overflow: hidden !important; /* Hide scrollbars */
+}
+body {
+  overflow: hidden !important; /* Hide scrollbars */
 }
 </style>

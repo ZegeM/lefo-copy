@@ -3,10 +3,17 @@ import VueRouter from "vue-router";
 import homePage from "../components/homePage";
 import resultPage from "@/components/resultPage";
 import TopNavbar from "../layouts/TopNavbar";
+import calculate from "@/components/calculate";
 
 Vue.use(VueRouter);
 
 const routes = [
+  {
+    path: "/calculate",
+    name: "calculate",
+    component: calculate,
+    props: true,
+  },
   {
     path: "/home",
     name: "home",
