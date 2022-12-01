@@ -1,15 +1,16 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import homePage from "../components/homePage";
-import resultPage from "@/components/resultPage";
 import TopNavbar from "../layouts/TopNavbar";
 import calculate from "@/components/calculate";
+import resultsOfPracticing from "@/components/resultsOfPracticing";
+import resultPage from "@/components/resultPage";
 
 Vue.use(VueRouter);
 
 const routes = [
   {
-    path: "/calculate",
+    path: "/practice/:eng",
     name: "calculate",
     component: calculate,
     props: true,
@@ -24,6 +25,12 @@ const routes = [
     path: "/result",
     name: "result",
     component: resultPage,
+    props: true,
+  },
+  {
+    path: "/practice-results",
+    name: "practice-results",
+    component: resultsOfPracticing,
     props: true,
   },
   {

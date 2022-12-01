@@ -1,14 +1,7 @@
 <template>
-  <div>
+  <div class="container">
     <nav style="flex-wrap: wrap">
-      <h1
-        style="
-          top: 0.5em;
-          margin-left: 1.55em;
-          font-size: 75px;
-          font-weight: bold;
-        "
-      >
+      <h1 style="top: 1em; margin-left: 2em; font-size: 4em; font-weight: bold">
         lefo.net
       </h1>
       <img
@@ -35,11 +28,12 @@
         </v-row>
       </v-container>
     </v-form> -->
+      <div class="sidenav">
+        <router-link to="/home">Glavna stran </router-link>
+      </div>
+
+      <p v-if="user">{{ username }}</p>
     </nav>
-    <div class="sidenav">
-      <router-link to="/home">Glavna stran </router-link>
-      <router-link to="/calculate">Učno polje</router-link>
-    </div>
   </div>
 </template>
 
@@ -57,8 +51,8 @@ export default {
   name: "TopNavbar",
   data() {
     return {
+      user: "Kekec",
       username: null,
-      password: null,
     };
   },
 };
@@ -73,7 +67,7 @@ nav {
   display: flex;
   padding-top: 10px;
   padding-right: 10px;
-  padding-bottom: 16px;
+  padding-bottom: 0px;
 
   a {
     font-weight: bold;
@@ -83,6 +77,10 @@ nav {
       color: #42b983;
     }
   }
+}
+.sidenav {
+  margin-left: 2em;
+  margin-top: 2em;
 }
 .icon {
   position: absolute;
@@ -107,5 +105,10 @@ router-link:hover {
   color: #00a0c6 !important;
   text-decoration: none !important;
   cursor: pointer !important;
+}
+
+.container {
+  margin-left: 0;
+  padding-bottom: 0;
 }
 </style>
